@@ -3,7 +3,7 @@ import { CreateUserDto } from '@dtos/users.dto';
 import { RequestWithUser } from '@interfaces/auth.interface';
 import { User } from '@interfaces/users.interface';
 import AuthService from '@services/auth.service';
-import { CONTROLLER_LOGIN_SUCCES_MESSAGE, CONTROLLER_LOGOUT_SUCCES_MESSAGE, CONTROLLER_SIGNUP_SUCCES_MESSAGE } from '@/messages/errors';
+import { LOGIN_SUCCES_MESSAGE, LOGOUT_SUCCES_MESSAGE, SIGNUP_SUCCES_MESSAGE } from '@/messages/errors';
 
 class AuthController {
   public authService = new AuthService();
@@ -13,7 +13,7 @@ class AuthController {
       const userData: CreateUserDto = req.body;
       const signUpUserData: User = await this.authService.signup(userData);
 
-      res.status(201).json({ data: signUpUserData, message: CONTROLLER_SIGNUP_SUCCES_MESSAGE });
+      res.status(201).json({ data: signUpUserData, message: SIGNUP_SUCCES_MESSAGE });
     } catch (error) {
       next(error);
     }
@@ -25,7 +25,7 @@ class AuthController {
       const { cookie, findUser } = await this.authService.login(userData);
 
       res.setHeader('Set-Cookie', [cookie]);
-      res.status(200).json({ data: findUser, message: CONTROLLER_LOGIN_SUCCES_MESSAGE });
+      res.status(200).json({ data: findUser, message: LOGIN_SUCCES_MESSAGE });
     } catch (error) {
       next(error);
     }
@@ -37,7 +37,7 @@ class AuthController {
       const logOutUserData: User = await this.authService.logout(userData);
 
       res.setHeader('Set-Cookie', ['Authorization=; Max-age=0']);
-      res.status(200).json({ data: logOutUserData, message: CONTROLLER_LOGOUT_SUCCES_MESSAGE });
+      res.status(200).json({ data: logOutUserData, message: LOGOUT_SUCCES_MESSAGE });
     } catch (error) {
       next(error);
     }
