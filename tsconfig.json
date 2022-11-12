@@ -32,7 +32,9 @@
       "@models/*": ["models/*"],
       "@routes/*": ["routes/*"],
       "@services/*": ["services/*"],
-      "@utils/*": ["utils/*"]
+      "@utils/*": ["utils/*"],
+      "@enums/*": ["enums/*"],
+      "@errors/*": ["errors/*"]
     }
   },
   //"types": ["jest", "node"],
