@@ -10,8 +10,33 @@ import {
   UPDATED_USER_SUCCES_MESSAGE,
 } from '@/messages/errors';
 
+import fs from 'fs';
+import util from 'util';
+
+const unlinkFile = util.promisify(fs.unlink);
+
+import { uploadFile, getFileStream } from '@utils/s3';
+
 class UsersController {
   public userService = new userService();
+
+  public getThumbnail = async (req: Request, res: Response) => {
+    console.log("param",req.params);
+    const key = 'fd362fb6bb610f9980c9f121e045d2b1'; // req.params.key;
+    const readStream = getFileStream(key);
+
+    readStream.pipe(res);
+  };
+
+  public uploadThumbnail = async (req: Request, res: Response) => {
+    const file = req.file;
+    // apply filter
+    // resize
+    const result = await uploadFile(file);
+    await unlinkFile(file.path);
+    const description = req.body.description;
+    res.send({ imagePath: `/images/${result.Key}` });
+  };
 
   public getUsers = async (req: Request, res: Response, next: NextFunction) => {
     try {
