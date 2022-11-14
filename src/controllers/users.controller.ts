@@ -21,10 +21,7 @@ class UsersController {
   public userService = new userService();
 
   public getThumbnail = async (req: Request, res: Response) => {
-    console.log("param",req.params);
-    const key = 'fd362fb6bb610f9980c9f121e045d2b1'; // req.params.key;
-    const readStream = getFileStream(key);
-
+    const readStream = getFileStream(req.params.key);
     readStream.pipe(res);
   };
 

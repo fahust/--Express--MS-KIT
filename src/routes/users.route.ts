@@ -16,13 +16,13 @@ class UsersRoute implements Routes {
   }
 
   private initializeRoutes() {
-    this.router.get(`${this.path}/thumbnail/:id`, this.usersController.getThumbnail);
     this.router.get(`${this.path}`, this.usersController.getUsers);
     this.router.get(`/user/:id`, this.usersController.getUserById);
     this.router.post(`${this.path}`, validationMiddleware(CreateUserDto, 'body'), this.usersController.createUser);
     this.router.put(`${this.path}/:id`, validationMiddleware(CreateUserDto, 'body', true), this.usersController.updateUser);
     this.router.delete(`${this.path}/:id`, this.usersController.deleteUser);
     this.router.post(`${this.path}/thumbnail/:id`, upload.single('image'), this.usersController.uploadThumbnail);
+    this.router.get(`${this.path}/thumbnail/:key`, this.usersController.getThumbnail);
   }
 }
 
