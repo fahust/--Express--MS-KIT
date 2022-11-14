@@ -4,10 +4,29 @@ import request from 'supertest';
 import App from '@/app';
 import { CreateUserDto } from '@dtos/users.dto';
 import UsersRoute from '@routes/users.route';
+import { faker } from '@faker-js/faker';
 
 afterAll(async () => {
   await new Promise<void>(resolve => setTimeout(() => resolve(), 500));
 });
+
+const fakeUsers = [
+  {
+    _id: faker.datatype.uuid(),
+    email: faker.internet.email(),
+    password: faker.internet.password(),
+  },
+  {
+    _id: faker.datatype.uuid(),
+    email: faker.internet.email(),
+    password: faker.internet.password(),
+  },
+  {
+    _id: faker.datatype.uuid(),
+    email: faker.internet.email(),
+    password: faker.internet.password(),
+  },
+];
 
 describe('Testing Users', () => {
   describe('[GET] /users', () => {
@@ -17,19 +36,16 @@ describe('Testing Users', () => {
 
       users.find = jest.fn().mockReturnValue([
         {
-          _id: 'qpwoeiruty',
-          email: 'a@email.com',
-          password: await bcrypt.hash('q1w2e3r4!', 10),
+          ...fakeUsers[0],
+          password: await bcrypt.hash(fakeUsers[0].password, 10),
         },
         {
-          _id: 'alskdjfhg',
-          email: 'b@email.com',
-          password: await bcrypt.hash('a1s2d3f4!', 10),
+          ...fakeUsers[1],
+          password: await bcrypt.hash(fakeUsers[1].password, 10),
         },
         {
-          _id: 'zmxncbv',
-          email: 'c@email.com',
-          password: await bcrypt.hash('z1x2c3v4!', 10),
+          ...fakeUsers[2],
+          password: await bcrypt.hash(fakeUsers[2].password, 10),
         },
       ]);
 
@@ -41,15 +57,14 @@ describe('Testing Users', () => {
 
   describe('[GET] /users/:id', () => {
     it('response findOne User', async () => {
-      const userId = 'qpwoeiruty';
+      const userId = fakeUsers[0]._id;
 
       const usersRoute = new UsersRoute();
       const users = usersRoute.usersController.userService.users;
 
       users.findOne = jest.fn().mockReturnValue({
-        _id: 'qpwoeiruty',
-        email: 'a@email.com',
-        password: await bcrypt.hash('q1w2e3r4!', 10),
+        ...fakeUsers[0],
+        password: await bcrypt.hash(fakeUsers[0].password, 10),
       });
 
       (mongoose as any).connect = jest.fn();
