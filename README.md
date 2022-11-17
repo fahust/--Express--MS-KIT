@@ -1,5 +1,6 @@
 # My Start Kit Express / TypeScript / Mongoose
-![My starter kit](./doc/My%20starter%20kit.png?raw=true 'MSK')
+<p align="center" width="100%"><img align="center" src="./doc/My%20starter%20kit.png?raw=true" /></p>
+
 ## Description
 
 This project is an exemple starter kit with this different framework and language :
