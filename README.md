@@ -1,9 +1,50 @@
 # My Start Kit Express / TypeScript / Mongoose
 <p align="center" width="100%"><img align="center" src="./doc/My%20starter%20kit.png?raw=true" /></p>
 
-## Description
+# Description
+This project is a starter for express, typescript and mongoose application, designed for Restful API's, easy to extend, to make other things.
 
-This project is an exemple starter kit with this different framework and language :
+Into, you can find an authentification by jwt service, a storage by AWS s3, validator DTOS, enums example, constant example, interfaces, and other good practices.
+
+## Prerequisites
+
+1. Latest version of Node to be installed(i recommend NVM, easier to install and possible to work with multiple node versions).
+2. Install MongoDB and make sure it is running on default port 27017 (if not then please configure constants.ts and change the connection for mongoDB).
+
+## Directory Structure
+```
+    ├── node_modules
+    ├── src
+    │    ├── config
+    │    ├── controllers  
+    │    │    ├── example.controller.ts
+    │    ├── databases
+    │    ├── dtos
+    │    ├── enums
+    │    ├── exceptions
+    │    ├── http
+    │    ├── interfaces
+    │    ├── logs
+    │    ├── messages
+    │    ├── middlewares
+    │    ├── models
+    │    ├── routes
+    │    ├── services
+    │    ├── test
+    │    ├── utils
+    │    │
+    │    ├── app.ts
+    │    ├── server.ts
+    ├── .env
+    ├── .eslintrc
+    ├── .prettierrc
+    ├── jest.config.js
+    ├── package.json
+    ├── tsconfig.json
+    ├── README.md
+    ├── swagger.yaml
+    ├── tsconfig.json
+```
 
 - [Node.js](https://nodejs.org/dist/latest-v18.x/docs/api/) v18.12.1
 - [Typescript](https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html) v4.9.3
