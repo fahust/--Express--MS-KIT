@@ -53,7 +53,7 @@ The **documentation** is generated using [swagger](https://swagger.io/docs/speci
 
 ## Authentication
 
-The **authentication** worked by [JWT](https://jwt.io/introduction) and registration by mail with [SwiftMailer](https://docs.sendgrid.com/for-developers/sending-email/quickstart-nodejs)
+The **authentication** worked by [JWT](https://jwt.io/introduction) and registration by mail with [SendGrid](https://docs.sendgrid.com/for-developers/sending-email/quickstart-nodejs)
 
 ## Storage
 
