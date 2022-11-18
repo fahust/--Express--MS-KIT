@@ -55,10 +55,16 @@ Into, you can find an authentification by jwt service, a storage by AWS s3, vali
 - [multer]() v1.4.5-lts.1
 - [swagger]() v6.2.1
 
-## Installation
+## Prerequisites
+
+Install [Node.js](https://nodejs.org/dist/latest-v18.x/docs/api/) and mongoDB will run on mongodb://localhost:27017
 
 ```bash
-$ npm install
+yarn ganache
+```
+
+```bash
+npm run ganache
 ```
 
 ## Running the app
@@ -84,9 +90,11 @@ $ npm run deploy:prod
 ## Test
 
 ```bash
-# unit tests with jest
+# unit tests with jest --coverage
 $ npm run test
 ```
+
+<p align="center" width="100%"><img align="center" src="./doc/coverage.png?raw=true" /></p>
 
 ## Documentation
 
@@ -103,4 +111,4 @@ The **storage** system use [AWS S3](https://docs.aws.amazon.com/s3/index.html) o
 
 ## Test
 
-The **test** system use [jest]()
+The **test** system use [jest](https://jestjs.io/docs/getting-started) run with --coverage parameter
