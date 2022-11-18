@@ -89,6 +89,8 @@ $ npm run deploy:prod
 
 ## Test
 
+The **test** system use [jest](https://jestjs.io/docs/getting-started) run with --coverage parameter
+
 ```bash
 # unit tests with jest --coverage
 $ npm run test
@@ -109,6 +111,7 @@ The **authentication** worked by [JWT](https://jwt.io/introduction) and registra
 
 The **storage** system use [AWS S3](https://docs.aws.amazon.com/s3/index.html) on a bucket with the use of [AWS SDK](https://www.npmjs.com/package/aws-sdk)
 
-## Test
+## Logs
 
-The **test** system use [jest](https://jestjs.io/docs/getting-started) run with --coverage parameter
+All routes and errors messages are logged with library [Winston](https://github.com/winstonjs/winston)
+<p align="center" width="100%"><img align="center" src="./doc/logs.png?raw=true" /></p>
