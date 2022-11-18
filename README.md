@@ -1,7 +1,9 @@
 # My Start Kit Express / TypeScript / Mongoose
+
 <p align="center" width="100%"><img align="center" src="./doc/My%20starter%20kit.png?raw=true" /></p>
 
 # Description
+
 This project is a starter for express, typescript and mongoose application, designed for Restful API's, easy to extend, to make other things.
 
 Into, you can find an authentification by jwt service, a storage by AWS s3, validator DTOS, enums example, constant example, interfaces, and other good practices.
@@ -12,11 +14,12 @@ Into, you can find an authentification by jwt service, a storage by AWS s3, vali
 2. Install MongoDB and make sure it is running on default port 27017 (if not then please configure constants.ts and change the connection for mongoDB).
 
 ## Directory Structure
+
 ```
     ├── node_modules
     ├── src
     │    ├── config
-    │    ├── controllers  
+    │    ├── controllers
     │    │    ├── example.controller.ts
     │    ├── databases
     │    ├── dtos
@@ -47,6 +50,7 @@ Into, you can find an authentification by jwt service, a storage by AWS s3, vali
 ```
 
 ## Library
+
 - [Node.js](https://nodejs.org/dist/latest-v18.x/docs/api/) v18.12.1
 - [Typescript](https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html) v4.9.3
 - [Express](https://expressjs.com/en/starter/installing.html) v4.18.1
@@ -58,13 +62,14 @@ Into, you can find an authentification by jwt service, a storage by AWS s3, vali
 ## Prerequisites
 
 Install [Node.js](https://nodejs.org/dist/latest-v18.x/docs/api/) and mongoDB will run on mongodb://localhost:27017
+Then, install all packages in project.
 
 ```bash
-yarn ganache
+yarn
 ```
 
 ```bash
-npm run ganache
+npm i
 ```
 
 ## Running the app
@@ -100,12 +105,16 @@ $ npm run test
 
 ## Documentation
 
-The **documentation** is generated using [swagger](https://swagger.io/docs/specification/basic-structure/) on this project
+The **documentation** is generated using [swagger](https://swagger.io/docs/specification/basic-structure/) on the url http://localhost:3000/api-docs/
 ![Documentation](./doc/Swagger.png?raw=true 'Documentation')
 
 ## Authentication
 
 The **authentication** worked by [JWT](https://jwt.io/introduction) and registration by mail with [SendGrid](https://docs.sendgrid.com/for-developers/sending-email/quickstart-nodejs)
+
+<details>
+  <summary>Authentication Code</summary>
+  <p>
 
 ```javascript
 import { NextFunction, Response } from 'express';
@@ -142,9 +151,16 @@ const authMiddleware = async (req: RequestWithUser, res: Response, next: NextFun
 export default authMiddleware;
 ```
 
+  </p>
+</details>
+
 ## Storage
 
 The **storage** system use [AWS S3](https://docs.aws.amazon.com/s3/index.html) on a bucket with the use of [AWS SDK](https://www.npmjs.com/package/aws-sdk)
+
+<details>
+  <summary>Storage AWS Code</summary>
+  <p>
 
 ```javascript
 require('dotenv').config();
@@ -184,7 +200,11 @@ export function getFileStream(fileKey) {
 }
 ```
 
+  </p>
+</details>
+
 ## Logs
 
 All routes and errors messages are logged with library [Winston](https://github.com/winstonjs/winston)
+
 <p align="center" width="100%"><img align="center" src="./doc/logs.png?raw=true" /></p>
