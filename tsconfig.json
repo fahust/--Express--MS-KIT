@@ -37,7 +37,6 @@
       "@errors/*": ["errors/*"]
     }
   },
-  //"types": ["jest", "node"],
   "include": ["src/**/*.ts", "src/**/*.json", ".env", "tests/*.ts"],
   "exclude": ["node_modules", "src/http", "src/logs"]
 }

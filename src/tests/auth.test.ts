@@ -9,6 +9,15 @@ import { faker } from '@faker-js/faker';
 const userData: CreateUserDto = {
   email: faker.internet.email(),
   password: faker.internet.password(),
+  product: '',
+  locale: '',
+  thumbnail: '',
+  firstName: '',
+  lastName: '',
+  userName: '',
+  phones: [''],
+  hasNewsletter: false,
+  permissions: [''],
 };
 const fakeId = faker.datatype.uuid();
 

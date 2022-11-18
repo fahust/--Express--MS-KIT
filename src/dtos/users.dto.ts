@@ -26,11 +26,11 @@ export class CreateUserDto {
   public userName: string;
 
   @IsArray()
-  public phones: string;
+  public phones: [string];
 
   @IsBoolean()
-  public hasNewsletter: string;
+  public hasNewsletter: boolean;
 
   @IsArray()
-  public permissions: string;
+  public permissions: [string];
 }
