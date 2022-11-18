@@ -13,6 +13,16 @@ Into, you can find an authentification by jwt service, a storage by AWS s3, vali
 1. Latest version of Node to be installed(i recommend NVM, easier to install and possible to work with multiple node versions).
 2. Install MongoDB and make sure it is running on default port 27017 (if not then please configure constants.ts and change the connection for mongoDB).
 
+Then, install all packages in project.
+
+```bash
+yarn
+```
+
+```bash
+npm i
+```
+
 ## Directory Structure
 
 ```
@@ -58,19 +68,6 @@ Into, you can find an authentification by jwt service, a storage by AWS s3, vali
 - [Jest]() v28.1.1
 - [multer]() v1.4.5-lts.1
 - [swagger]() v6.2.1
-
-## Prerequisites
-
-Install [Node.js](https://nodejs.org/dist/latest-v18.x/docs/api/) and mongoDB will run on mongodb://localhost:27017
-Then, install all packages in project.
-
-```bash
-yarn
-```
-
-```bash
-npm i
-```
 
 ## Running the app
 
