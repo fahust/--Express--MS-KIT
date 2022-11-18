@@ -69,7 +69,7 @@ describe('Testing Users', () => {
 
       (mongoose as any).connect = jest.fn();
       const app = new App([usersRoute]);
-      return request(app.getServer()).get(`${usersRoute.path}/${userId}`).expect(200);
+      return request(app.getServer()).get(`/user/${userId}`).expect(200);
     });
   });
 
@@ -78,6 +78,15 @@ describe('Testing Users', () => {
       const userData: CreateUserDto = {
         email: 'test@email.com',
         password: 'q1w2e3r4',
+        product: '',
+        locale: '',
+        thumbnail: '',
+        firstName: '',
+        lastName: '',
+        userName: '',
+        phones: [''],
+        hasNewsletter: false,
+        permissions: [''],
       };
 
       const usersRoute = new UsersRoute();
@@ -102,6 +111,15 @@ describe('Testing Users', () => {
       const userData: CreateUserDto = {
         email: 'test@email.com',
         password: 'q1w2e3r4',
+        product: '',
+        locale: '',
+        thumbnail: '',
+        firstName: '',
+        lastName: '',
+        userName: '',
+        phones: [''],
+        hasNewsletter: false,
+        permissions: [''],
       };
 
       const usersRoute = new UsersRoute();
