@@ -26,12 +26,12 @@ jobs:
       - run: 
           name: Run tests
           command: echo $LOG_DIR
-      #- node/install-packages:
+      - node/install-packages:
           # If you are using yarn, change the line below from "npm" to "yarn"
-      #    pkg-manager: npm
-      #- run:
-      #    name: Run tests
-      #    command: npm test
+          pkg-manager: npm
+      - run:
+          name: Run tests
+          command: npm test
 
 workflows:
   # Below is the definition of your workflow.
