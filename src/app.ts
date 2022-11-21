@@ -48,7 +48,7 @@ class App {
     if (this.env !== 'production') {
       set('debug', true);
     }
-
+    
     connect(dbConnection.url, dbConnection.options);
   }
 
