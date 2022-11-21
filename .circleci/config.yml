@@ -38,5 +38,10 @@ workflows:
   sample:
     jobs:
       - build-and-test
+  build :
+    jobs :
+      - build-and-test :
+          context :
+            - ms-start-kit
       # For running simple node tests, you could optionally use the node/test job from the orb to replicate and replace the job above in fewer lines.
       # - node/test
