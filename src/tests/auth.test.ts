@@ -21,6 +21,7 @@ const userData: CreateUserDto = {
 };
 const fakeId = faker.datatype.uuid();
 
+
 afterAll(async () => {
   await new Promise<void>(resolve => setTimeout(() => resolve(), 500));
 });
